@@ -319,3 +319,47 @@ background-image: url("amazon.png");
   margin-top: 5px;
    padding: 0px 7.2px;
 }
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .nav-search {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .shop-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-ops {
+    display: none; /* hide extra nav options on very small screens */
+  }
+
+  .nav-panel {
+    flex-direction: column;
+    height: auto;
+    padding: 5px;
+  }
+
+  .hero-image {
+    height: 200px; /* smaller hero image for mobile */
+  }
+
+  .hero-msg {
+    font-size: 0.7rem;
+    width: 95%;
+  }
+}
