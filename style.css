@@ -1,5 +1,6 @@
 *{
   margin: 0;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -10,6 +11,7 @@
   align-items: center;
   justify-content: space-evenly;
   color: white;
+   flex-wrap: wrap;   /* ✅ add this line */
 }
 
 .nav-logo{
@@ -61,15 +63,16 @@
 
 .nav-search{
   display: flex;
-   height: 40px;
-  width: 620px;
-  background-color:#f3a847;
+  height: 40px;
+  width: 100%;        /* ✅ flexible width */
+  max-width: 620px;   /* ✅ desktop limit */
+  background-color: #f3a847;
   border-radius: 5px;
 }
 
 
 .search-input{
-  width: 620px;
+  width: 100%;        /* ✅ flexible width */
   font-size: 1rem;
   border: none;
 }
@@ -130,6 +133,7 @@ border: none;
   align-items: center;
   justify-content: space-evenly;
   color: white;
+  flex-wrap: wrap;   /* ✅ allow wrapping */
 }
 
 .nav-ops p{
@@ -196,8 +200,8 @@ margin-bottom: 25px;
  
 
 .box{
-  height: 400px;
-  width: 23%;
+height: auto;       /* ✅ let content decide */
+  width: 23%;         /* ✅ desktop */
   background-color: white;
   padding: 20px 0px 15px;
   margin-top: 15px;
@@ -320,9 +324,15 @@ background-image: url("amazon.png");
    padding: 0px 7.2px;
 }
 
-/* Mobile responsive styles */
-@media (max-width: 768px) {
-  .navbar {
+
+/* Responsive styles */
+@media (max-width: 1024px) { /* tablets */
+  .box { width: 45%; }
+  .hero-image { height: 300px; }
+}
+
+@media (max-width: 768px) { /* large phones / small tablets */
+  .navbar, .nav-panel {
     flex-direction: column;
     height: auto;
     padding: 10px;
@@ -340,26 +350,37 @@ background-image: url("amazon.png");
 
   .box {
     width: 90%;
+    height: auto;
+  }
+
+  .hero-image { height: 250px; }
+
+   .foot-panel2 {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .foot-panel2 ul {
+    margin: 10px 20px;
   }
 }
 
-@media (max-width: 480px) {
-  .nav-ops {
-    display: none; /* hide extra nav options on very small screens */
-  }
-
+@media (max-width: 480px) { /* small phones */
+  .nav-ops { display: none; }
   .nav-panel {
     flex-direction: column;
     height: auto;
-    padding: 5px;
+     padding: 5px 10px;
+    text-align: center;
   }
 
-  .hero-image {
-    height: 200px; /* smaller hero image for mobile */
-  }
-
+  .hero-image { height: 200px; }
   .hero-msg {
     font-size: 0.7rem;
     width: 95%;
+     height: auto;
+    line-height: 1.4;
+    padding: 8px 5px;
   }
 }
