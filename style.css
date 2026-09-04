@@ -372,6 +372,10 @@ background-image: url("amazon.png");
     justify-content: space-between;
     padding: 0 10px;
   }
+  .nav-search {
+    width: 70%;        /* ✅ shrink search bar */
+    margin: 0 10px;    /* ✅ spacing */
+  }
 
   .nav-ops { display: none; }
   .nav-panel {
