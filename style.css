@@ -367,6 +367,12 @@ background-image: url("amazon.png");
 }
 
 @media (max-width: 480px) { /* small phones */
+
+  .navbar {
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
   .nav-ops { display: none; }
   .nav-panel {
     flex-direction: column;
@@ -377,8 +383,10 @@ background-image: url("amazon.png");
 
   .nav-cart {
     position: relative;   /* ✅ stay inside navbar */
-    margin-left: auto;    /* ✅ push to right neatly */
-    font-size: 1rem;      /* ✅ smaller size for mobile */
+    margin-left: auto;   /* ✅ push to right */
+    font-size: 0.8rem;   /* ✅ shrink text */
+     justify-content: space-between; /* ✅ logo left, cart right */
+    padding: 0 10px;
   }
 
   .nav-cart i {
