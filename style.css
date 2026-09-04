@@ -375,6 +375,16 @@ background-image: url("amazon.png");
     text-align: center;
   }
 
+  .nav-cart {
+    position: relative;   /* ✅ stay inside navbar */
+    margin-left: auto;    /* ✅ push to right neatly */
+    font-size: 1rem;      /* ✅ smaller size for mobile */
+  }
+
+  .nav-cart i {
+    font-size: 22px;      /* ✅ shrink icon */
+  }
+
   .hero-image { height: 200px; }
   .hero-msg {
     font-size: 0.7rem;
