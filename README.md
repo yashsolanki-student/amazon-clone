@@ -2,7 +2,7 @@
 “My first project: Amazon homepage clone built with HTML + CSS after learning from Apna College one‑shot lectures.”
 
 ## Live Demo
-👉https://yashsolanki-student.github.io/amazon-clone/
+👉[https://yashsolanki-student.github.io/amazon-clone/](https://amazon-clone-flax-nine.vercel.app/)
 
 ## Features
 - Amazon‑style navbar and product sections
