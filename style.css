@@ -5,16 +5,17 @@
 }
 
 .navbar{
-  height: 60px;
+  min-height: 60px;
   background-color: #0f1111;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   color: white;
    flex-wrap: wrap;   /* ✅ add this line */
+    gap: 18px;      /* ✅ increased from 12px */
 }
 
-.nav-logo{
+.nav-logo{      
   height: 50px;
   width:100px;
  
@@ -45,6 +46,7 @@
 }
 .borderx{
  border:0.5px solid transparent;
+  padding: 0 10px;   /* ✅ add this */
 }
 .borderx:hover{
   border: 0.5px solid white;
@@ -62,10 +64,11 @@
 /**box 3 **/
 
 .nav-search{
-  display: flex;
+ display: flex;
   height: 40px;
-  width: 100%;        /* ✅ flexible width */
-  max-width: 620px;   /* ✅ desktop limit */
+  flex: 1 1 300px;   /* ✅ grow/shrink, but don't go below 300px */
+  max-width: 620px;
+  min-width: 0;      /* ✅ allows shrinking inside flex row */
   background-color: #f3a847;
   border-radius: 5px;
 }
@@ -127,7 +130,7 @@ border: none;
   }
 /** panel**/
 .nav-panel{
-   height: 30px;
+  min-height: 30px;
   background-color: #232f3e;
   display: flex;
   align-items: center;
@@ -366,42 +369,43 @@ background-image: url("amazon.png");
   }
 }
 
-@media (max-width: 480px) { /* small phones */
 
+
+@media (max-width: 480px) {
   .navbar {
-    justify-content: space-between;
+    justify-content: space-between; /* ✅ logo left, cart right */
     padding: 0 10px;
   }
-  .nav-search {
+
+  .navbar .nav-search {
     width: 70%;        /* ✅ shrink search bar */
     margin: 0 10px;    /* ✅ spacing */
   }
 
   .nav-ops { display: none; }
+
   .nav-panel {
     flex-direction: column;
     height: auto;
-     padding: 5px 10px;
+    padding: 5px 10px;
     text-align: center;
   }
 
   .nav-cart {
-    position: relative;   /* ✅ stay inside navbar */
     margin-left: auto;   /* ✅ push to right */
     font-size: 0.8rem;   /* ✅ shrink text */
-     justify-content: space-between; /* ✅ logo left, cart right */
     padding: 0 10px;
   }
 
   .nav-cart i {
-    font-size: 22px;      /* ✅ shrink icon */
+    font-size: 22px;     /* ✅ shrink icon */
   }
 
   .hero-image { height: 200px; }
   .hero-msg {
     font-size: 0.7rem;
     width: 95%;
-     height: auto;
+    height: auto;
     line-height: 1.4;
     padding: 8px 5px;
   }
